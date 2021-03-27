@@ -1,17 +1,31 @@
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import Employee from './App.js';
+import Login from './login.js';
+import UserComp from './userComp.js';
+import PassComp from './passComp.js';
+import SubmitComp from './submitComp.js';
+import TodoComponent from './TodoComponent.js';
+import Products from './Products.js';
+
+import ReduxLogin from './ReduxLogin';
+import ReduxToDo from './ReduxToDo';
+import ShoppingPortal from './ShoppingPortal'
+import {Provider} from 'react-redux';
+import {createStore} from 'redux';
+import reducer from './store/reducer';
+import reducerTodo from './store/reducerTodo';
+import reducerShop from './store/reducerShop';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
-
+import NotesLogin from './NotesLogin';
+const store = createStore(reducer);
+const storeTodo = createStore(reducerTodo);
+const storeShop = createStore(reducerShop);
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+    <React.StrictMode>
+      <NotesLogin />
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
+ 
